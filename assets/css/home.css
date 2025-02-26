@@ -117,22 +117,6 @@ header{
 .social:hover{
     transform: scale(1.1);
 }
-.button{
-    border: 1px solid var(--mgray);
-    color: var(--black);
-    background-color: transparent;
-    font-size: 13px;
-    letter-spacing: 2px;
-    padding: 10px 20px;
-    border-radius: 1px;
-    cursor: pointer;
-    transition: all .25s linear;
-}
-.button:hover{
-    background-color: var(--main-color);
-    color: var(--bg);
-    border-color: var(--main-color);
-}
 @media screen and (max-width: 969px){
     .hero{
         width: 100%;
