@@ -3,7 +3,7 @@ function init() {
     let activeText = 0,
         titles = [
             "Alex<br>Timoncini",
-            "I'm a<br>Web Developer"
+            "I'm a Web<br>Developer"
         ]
     setInterval(()=>{
         if(activeText){
