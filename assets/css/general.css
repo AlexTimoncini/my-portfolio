@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+:root {
+    /*COLORS*/
+    --bg: #fafafa;
+    --white: #fff;
+    --black: #000;
+    --gray: #808080;
+    --lgray: #f0f0f0;
+    --main-color: #79c3bd;
+    /*FONTS*/
+    --pri-font: 'Karla';
+    --sec-font: 'Playfair';
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--white);
+    background: var(--main-color);
+}
+
+::selection {
+    color: var(--white);
+    background: var(--main-color);
+}
+body{
+    min-height: 100vh;
+    font-family: var(--pri-font), sans-serif;
+    color: var(--gray);
+    background: var(--bg);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.img-fluid{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.common-text{
+    line-height: 1.8rem;
+}
+mark{
+    background-color: transparent;
+    color: var(--main-color);
+}
+@media screen and (max-width: 1169px){
+    .container{
+        max-width: 970px;
+    }
+}
+@media screen and (max-width: 969px){
+    .container{
+        max-width: 750px;
+    }
+}
+/*FONT*/
+@font-face {
+    font-family: 'Playfair';
+    src: url(../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Karla';
+    src: url(../fonts/Karla/Karla-VariableFont_wght.ttf) format('truetype');
+}

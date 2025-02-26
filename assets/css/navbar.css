@@ -1,0 +1,10 @@
+/*NAVBAR*/
+nav{
+    padding: 2rem 0;
+}
+
+nav .logo{
+    display: block;
+    width: 60px;
+    height: 60px;
+}
