@@ -1,9 +1,9 @@
 /*NAVBAR*/
-nav{
-    padding: 2rem 0;
+#navbar{
+    padding: 2rem 20px;
 }
 
-nav .logo{
+#navbar .logo{
     display: block;
     width: 60px;
     height: 60px;
