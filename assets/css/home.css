@@ -24,6 +24,8 @@ header{
     background: linear-gradient(-45deg, var(--main-color), var(--lgray));
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
+    display: flex;
+    align-items: flex-end;
 }
 @keyframes gradient {
     0% {
@@ -110,6 +112,10 @@ header{
     border: 1px solid var(--main-color);
     border-radius: 50%;
     padding: 6px;
+    transition: all .33s ease ;
+}
+.social:hover{
+    transform: scale(1.1);
 }
 .button{
     border: 1px solid var(--mgray);
