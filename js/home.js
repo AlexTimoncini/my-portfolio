@@ -19,4 +19,14 @@ function init() {
             document.getElementById("multi_title").classList.remove("fade-in") 
         }, 500)
     },6000)
+    //parallax
+    document.addEventListener("mousemove", parallax)
 }
+function parallax(event) {
+    this.querySelectorAll(".parallax").forEach((shift) => {
+      const position = shift.dataset.parallax
+      const x = (window.innerWidth - event.pageX * position) / 90
+      const y = (window.innerHeight - event.pageY * position) / 90
+      shift.style.transform = `translateX(${x}px) translateY(${y}px)`
+    })
+  }
