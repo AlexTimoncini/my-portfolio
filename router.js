@@ -1,7 +1,6 @@
 //ROUTER
 import { Router } from './js/classes/router.class.js'
-//let router = new Router('http://127.0.0.1:5500');
-let router = new Router('http://localhost:63342/my-portfolio/');
+let router = new Router('https://alex-dev.it');
 //rotte
 router.get('/', function(){
     buildPage('home.html',
