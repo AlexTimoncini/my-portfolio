@@ -130,6 +130,13 @@ header{
 }
 @media screen and (max-width: 750px){
     .section-title{
-        display: none;
+        font-size: 100px;
+        top: 50px;
+    }
+}
+@media screen and (max-width: 350px){
+    .section-title{
+        font-size: 80px;
+        top: 70px;
     }
 }
