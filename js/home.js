@@ -20,8 +20,13 @@ function init() {
         }, 500)
     },6000)
     //parallax
-    document.addEventListener("mousemove", parallax)
-    window.addEventListener("deviceorientation", parallaxShake);
+    const hasMouse = navigator.maxTouchPoints === 0;
+
+    if (hasMouse) {
+    document.addEventListener("mousemove", parallax);
+    } else {
+    console.log("Parallax disabled: No mouse detected");
+    }
 }
 function parallax(event) {
     this.querySelectorAll(".parallax").forEach((shift) => {
@@ -31,12 +36,3 @@ function parallax(event) {
       shift.style.transform = `translateX(${x}px) translateY(${y}px)`
     })
 }
-function parallaxShake(event) {
-    document.querySelectorAll(".parallax").forEach((shift) => {
-      const position = shift.dataset.parallax;
-      const x = (window.innerWidth - event.gamma * position) / 45;
-      const y = (window.innerHeight - event.beta * position) / 45;
-      shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-    });
-  }
-  
