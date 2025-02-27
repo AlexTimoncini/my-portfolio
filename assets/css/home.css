@@ -16,16 +16,26 @@
 header{
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 50px;
 }
 .hero{
     width: 40%;
     overflow: hidden;
-    background-color: var(--main-color);
+    display: flex;
+    align-items: flex-end;
+    max-height: 500px;
+}
+header .hero{
     background: linear-gradient(-45deg, var(--main-color), var(--lgray));
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-    display: flex;
-    align-items: flex-end;
 }
 @keyframes gradient {
     0% {
@@ -126,6 +136,9 @@ header{
     }
     .d-auto{
         max-width: 100%;
+    }
+    #skills .hero{
+        display: none;
     }
 }
 @media screen and (max-width: 750px){
