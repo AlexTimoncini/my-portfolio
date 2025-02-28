@@ -23,6 +23,9 @@
     display: block;
     padding-top: 1rem;
 }
+.footer-link:hover{
+    text-decoration: underline;
+}
 .footer-blog{
     margin-bottom: 30px;
 }
