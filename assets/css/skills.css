@@ -185,6 +185,7 @@ section{
 }
 #badges{
     text-align: center;
+    margin-top: 50px;
 }
 .badge{
     text-decoration: none;
