@@ -1,17 +1,14 @@
 #main{
     padding: 50px 20px;
 }
-header{
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 50px;
-}
 section{
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    padding-top: 150px;
     padding-bottom: 50px;
+}
+.section-title{
+    top: -150px
 }
 .hero{
     width: 40%;
@@ -19,22 +16,6 @@ section{
     display: flex;
     align-items: flex-end;
     max-height: 500px;
-}
-header .hero{
-    background: linear-gradient(-45deg, var(--main-color), var(--lgray));
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-}
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 .hero img{
     width: 100%;
@@ -70,10 +51,6 @@ header .hero{
         opacity: 1;
     }
 }
-.d-auto{
-    max-width: 65%;
-    margin: 0 auto;
-}
 .descr{
     position: relative;
     padding-left: 50px;
@@ -98,28 +75,62 @@ header .hero{
     width: 40px;
     height: 1px;
 }
-.socials{
-    margin: 1rem 0 1.5rem;
+.list-wrap{
     display: flex;
-    column-gap: .5rem;
+    flex-wrap: wrap;
 }
-.social{
+.list-wrap .scroll-fade-in{
+    width: calc(50% - 10px);
+    margin-bottom: 2rem;
+}
+.list-wrap h3{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 0 15px 0;
+}
+.list-wrap ul{
     display: block;
-    height: 35px;
-    width: 35px;
-    border: 1px solid var(--main-color);
-    border-radius: 50%;
-    padding: 6px;
-    transition: all .33s ease ;
+    margin-bottom: 1.5em;
+    padding-left: 40px;
 }
-.social:hover{
+.list-wrap li{
+    list-style: none;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.list-wrap li::before{
+    content: '\2022';
+    color: #000;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+#skills .content {
+    width: 70%;
+}
+#skills .hero{
+    width: 30%;
+    max-height: none;
+}
+#skills .hero:hover img{
     transform: scale(1.1);
+}
+#skills .hero img{
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 2s linear;
 }
 @media screen and (max-width: 969px){
     .hero{
         width: 100%;
     }
     .content{
+        width: 100%;
+    }
+    #skills .content{
         width: 100%;
     }
     .d-auto{
@@ -133,6 +144,16 @@ header .hero{
     .section-title{
         font-size: 100px;
         top: 50px;
+    }
+    .list-wrap .scroll-fade-in{
+        width: 100%
+    }
+    .list-wrap .scroll-fade-in.delay-1,
+    .list-wrap .scroll-fade-in.delay-2,
+    .list-wrap .scroll-fade-in.delay-3{
+        -webkit-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        transition-delay: 0s;
     }
 }
 @media screen and (max-width: 350px){

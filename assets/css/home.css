@@ -89,26 +89,6 @@ header .hero{
     position: relative;
     padding-left: 50px;
 }
-.section-name{
-    position: absolute;
-    right: calc(100% - 50px);
-    top: 0;
-    transform: translateX(50%);
-    rotate: 90deg;
-    color: var(--black);
-    font-weight: normal;
-    letter-spacing: 10px;
-    font-size: 0.9rem;
-}
-.section-name::after {
-    position: absolute;
-    top: 8px;
-    right: -40px;
-    content: '';
-    background: var(--black);
-    width: 40px;
-    height: 1px;
-}
 .socials{
     margin: 1rem 0 1.5rem;
     display: flex;
