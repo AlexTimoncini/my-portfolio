@@ -115,52 +115,11 @@ header .hero{
 .social:hover{
     transform: scale(1.1);
 }
-.list-wrap{
-    display: flex;
-    flex-wrap: wrap;
-}
-.list-wrap .scroll-animate{
-    width: calc(50% - 10px);
-    margin-bottom: 2rem;
-}
-.list-wrap h3{
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.8);
-    margin: 0 0 15px 0;
-}
-.list-wrap ul{
-    display: block;
-    margin-bottom: 1.5em;
-    padding-left: 40px;
-}
-.list-wrap li{
-    list-style: none;
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-.list-wrap li::before{
-    content: '\2022';
-    color: #000;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-#skills .content {
-    width: 70%;
-}
-#skills .hero {
-    width: 30%;
-}
 @media screen and (max-width: 969px){
     .hero{
         width: 100%;
     }
     .content{
-        width: 100%;
-    }
-    #skills .content{
         width: 100%;
     }
     .d-auto{
@@ -174,9 +133,6 @@ header .hero{
     .section-title{
         font-size: 100px;
         top: 50px;
-    }
-    .list-wrap .scroll-animate{
-        width: 100%
     }
 }
 @media screen and (max-width: 350px){

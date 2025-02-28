@@ -56,6 +56,9 @@ mark{
     color: var(--main-color);
 }
 .button{
+    display: block;
+    width: fit-content;
+    text-align: center;
     text-decoration: none;
     border: 1px solid var(--mgray);
     color: var(--black);
@@ -71,6 +74,18 @@ mark{
     background-color: var(--main-color);
     color: var(--bg);
     border-color: var(--main-color);
+}
+.section-title{
+    position: absolute;
+    font-family: var(--sec-font), serif;
+    font-size: 250px;
+    color: var(--lgray);
+    font-weight: 700;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 @media screen and (max-width: 1169px){
     .container{

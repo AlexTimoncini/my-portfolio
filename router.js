@@ -11,13 +11,13 @@ router.get('/', function(){
             {url: 'home.js'}
         ]).then(()=>stopLoading())
 });
-router.get('/level', function(){
-    buildPage('level.html',
+router.get('/skills', function(){
+    buildPage('skills.html',
         [
-            'level.css'
+            'skills.css'
         ],
         [
-            {url: 'level.js'}
+            {url: 'skills.js'}
         ]).then(()=>stopLoading())
 });
 
