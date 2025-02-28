@@ -143,7 +143,7 @@ section{
     z-index: 10;
 }
 .animateDot{
-    animation: animateDot 2s linear forwards;
+    animation: animateDot 2s ease-in-out forwards;
 }
 .level .box .percent .dot::before {
     content: '';
