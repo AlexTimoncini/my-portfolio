@@ -47,26 +47,6 @@ section{
     position: relative;
     padding-left: 50px;
 }
-.section-name{
-    position: absolute;
-    right: calc(100% - 50px);
-    top: 0;
-    transform: translateX(50%);
-    rotate: 90deg;
-    color: var(--black);
-    font-weight: normal;
-    letter-spacing: 10px;
-    font-size: 0.9rem;
-}
-.section-name::after {
-    position: absolute;
-    top: 8px;
-    right: -40px;
-    content: '';
-    background: var(--black);
-    width: 40px;
-    height: 1px;
-}
 .list-wrap{
     display: flex;
     flex-wrap: wrap;
@@ -99,6 +79,9 @@ section{
     width: 1em;
     margin-left: -1em;
 }
+#skills{
+    padding-bottom: 150px;
+}
 #skills .content {
     width: 70%;
 }
@@ -115,27 +98,127 @@ section{
     transform: scale(1);
     transition: all 2s linear;
 }
-@media screen and (max-width: 969px){
-    .hero{
-        width: 100%;
+#levels{
+    padding-top: 20px;
+    display: block;
+}
+.levels {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.level .box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.level .box .percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.level .box .percent::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 20px;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg);
+    font-size: 1.75rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+.level .box .percent .dot {
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+}
+.animateDot{
+    animation: animateDot 2s linear forwards;
+}
+.level .box .percent .dot::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+.level .box .percent svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+.level .box .percent svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 3;
+    stroke: var(--mgray);
+    transform: translate(5px, 5px);
+}
+.level .box .percent svg circle:nth-child(2) {
+    stroke: var(--main-color);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+    opacity: 0;
+}
+.showIn{
+    animation: showIn .5s linear forwards;
+    animation-delay: 2s;
+}
+.level .number h2{
+    margin: 5px 0 0;
+}
+@keyframes animateDot{
+    0% {
+        transform: rotate(0deg);
     }
-    .content{
-        width: 100%;
+    100% {
+        transform: rotate(calc(3.6deg* var(--num)));
     }
-    #skills .content{
-        width: 100%;
+}
+@-webkit-keyframes animateDot{
+    0% {
+        transform: rotate(0deg);
     }
-    .d-auto{
-        max-width: 100%;
+    100% {
+        transform: rotate(calc(3.6deg* var(--num)));
     }
-    #skills .hero{
-        display: none;
+}
+@keyframes showIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes showIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 @media screen and (max-width: 750px){
     .section-title{
         font-size: 100px;
-        top: 50px;
+        top: -100px;
     }
     .list-wrap .scroll-fade-in{
         width: 100%
@@ -151,6 +234,26 @@ section{
 @media screen and (max-width: 350px){
     .section-title{
         font-size: 80px;
-        top: 70px;
+        top: -70px;
+    }
+}
+@media screen and (max-width: 969px){
+    .hero{
+        width: 100%;
+    }
+    .content{
+        width: 100%;
+    }
+    #skills .content{
+        width: 100%;
+    }
+    .d-auto{
+        max-width: 100%;
+    }
+    #skills{
+        padding-bottom: 100px;
+    }
+    #skills .hero{
+        display: none;
     }
 }

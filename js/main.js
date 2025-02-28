@@ -15,11 +15,10 @@ function parallax(event) {
 }
 window.addEventListener('scroll', fadeIn );
 function fadeIn() {
-    console.log("fade-in")
     let elementsArray = document.querySelectorAll(".scroll-fade-in");
     for (let i = 0; i < elementsArray.length; i++) {
         let elem = elementsArray[i]
-        let distInView = elem.getBoundingClientRect().top - window.innerHeight + 20;
+        let distInView = elem.getBoundingClientRect().top - window.innerHeight + 40;
         if (distInView < 0) {
             elem.classList.add("visible");
         } else {
