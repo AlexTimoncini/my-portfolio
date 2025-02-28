@@ -199,6 +199,13 @@ header .hero{
     .list-wrap .scroll-fade-in{
         width: 100%
     }
+    .list-wrap .scroll-fade-in.delay-1,
+    .list-wrap .scroll-fade-in.delay-2,
+    .list-wrap .scroll-fade-in.delay-3{
+        -webkit-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        transition-delay: 0s;
+    }
 }
 @media screen and (max-width: 350px){
     .section-title{
