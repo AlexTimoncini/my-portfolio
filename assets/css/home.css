@@ -196,7 +196,7 @@ header .hero{
         font-size: 100px;
         top: 50px;
     }
-    .list-wrap .scroll-animate{
+    .list-wrap .scroll-fade-in{
         width: 100%
     }
 }
