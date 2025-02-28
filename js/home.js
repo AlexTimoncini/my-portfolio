@@ -19,4 +19,7 @@ function init() {
             document.getElementById("multi_title").classList.remove("fade-in") 
         }, 500)
     },6000)
+    setTimeout(()=>{
+        fadeIn();
+    },550)
 }

@@ -87,6 +87,35 @@ mark{
     width: 100%;
     text-align: center;
 }
+.scroll-fade-in{
+    opacity: 0;
+    -webkit-transition-delay: .5s;
+    -o-transition-delay: .5s;
+    transition-delay: .5s;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+    transform: translateY(-10px);
+}
+.scroll-fade-in.delay-1{
+    -webkit-transition-delay: .15s;
+    -o-transition-delay: .15s;
+    transition-delay: .15s;
+}
+.scroll-fade-in.delay-2{
+    -webkit-transition-delay: .25s;
+    -o-transition-delay: .25s;
+    transition-delay: .25s;
+}
+.scroll-fade-in.delay-3{
+    -webkit-transition-delay: .35s;
+    -o-transition-delay: .35s;
+    transition-delay: .35s;
+}
+.scroll-fade-in.visible{
+    transform: translateY(0);
+    opacity: 1;
+}
 @media screen and (max-width: 1169px){
     .container{
         max-width: 970px;
