@@ -153,6 +153,10 @@ header .hero{
 #skills .hero {
     width: 30%;
 }
+#skills .hero img{
+    height: 100%;
+    object-fit: cover;
+}
 @media screen and (max-width: 969px){
     .hero{
         width: 100%;
