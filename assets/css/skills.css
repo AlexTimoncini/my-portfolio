@@ -184,12 +184,12 @@ section{
     margin: 5px 0 0;
 }
 #badges{
-    text-align: center;
     margin-top: 50px;
 }
 .badge{
     text-decoration: none;
-    display: inline-block;
+    display: block;
+    text-align: center;
 }
 .badge img{
     border: 3px solid var(--main-color);
