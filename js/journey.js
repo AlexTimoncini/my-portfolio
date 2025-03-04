@@ -27,7 +27,7 @@ async function init() {
         for(let i=pathLength;i>0;i--){
             i -= 30 * (i/pathLength)
             path.style.strokeDashoffset = i
-            await sleep(0)
+            await sleep(1)
         }
         document.getElementById("diveIn").classList.add("active")
         enableScroll()
