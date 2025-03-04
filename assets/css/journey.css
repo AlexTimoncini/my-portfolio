@@ -1,0 +1,41 @@
+#journey{
+    position: relative;
+    height: calc(100vh - 124px);
+}
+.descr{
+    position: relative;
+}
+.svg{
+    max-height: 50vh;
+}
+#paperBoat{
+    height: 100%;
+    max-width: 500px;
+    width: 80vw;
+    transform: rotateY(180deg);
+    margin: 10rem auto;
+    display: block;
+}
+#diveIn{
+    transition: all .33s ease-in;
+    opacity: 0;
+    display: block;
+    margin: 0 auto;
+}
+#diveIn.active{
+    opacity: 1;
+}
+@media screen and (max-width: 750px){
+    .section-title{
+        font-size: 100px;
+        top: 50px;
+    }
+    #paperBoat{
+        margin: 5rem auto;
+    }
+}
+@media screen and (max-width: 350px){
+    .section-title{
+        font-size: 80px;
+    }
+}

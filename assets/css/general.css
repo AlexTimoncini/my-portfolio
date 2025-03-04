@@ -126,6 +126,7 @@ mark{
     font-weight: normal;
     letter-spacing: 10px;
     font-size: 0.9rem;
+    white-space: nowrap;
 }
 .section-name::after {
     position: absolute;

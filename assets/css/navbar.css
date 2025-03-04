@@ -1,6 +1,7 @@
 /*NAVBAR*/
 #navbar{
-    padding: 2rem 20px;
+    padding: 32px 20px;
+    height: 124px;
 }
 
 #navbar .logo{

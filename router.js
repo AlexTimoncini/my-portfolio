@@ -1,6 +1,7 @@
 //ROUTER
 import { Router } from './js/classes/router.class.js'
-let router = new Router('https://alex-dev.it');
+//let router = new Router('https://alex-dev.it');
+let router = new Router('http://127.0.0.1:5500/');
 //rotte
 router.get('/', function(){
     buildPage('home.html',
@@ -19,6 +20,15 @@ router.get('/skills', function(){
         [
             {url: 'skills.js'}
         ]).then(()=>stopLoading())
+});
+router.get('/journey', function(){
+    buildPage('journey.html',
+        [
+            'journey.css'
+        ],
+        [
+            {url: 'journey.js', type:"module"}
+        ]).then(()=>{console.log("loadade")})
 });
 
 router.start();
