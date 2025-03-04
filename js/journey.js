@@ -25,7 +25,7 @@ async function init() {
     path.style.strokeDashoffset = pathLength
     setTimeout(async function(){
         for(let i=pathLength;i>0;i--){
-            i -= 30 * .5+(i/pathLength)
+            i -= 30 * (i/pathLength)
             path.style.strokeDashoffset = i
             await sleep(0)
         }
