@@ -28,7 +28,7 @@ router.get('/journey', function(){
         ],
         [
             {url: 'journey.js', type:"module"}
-        ]).then(()=>{console.log("loadade")})
+        ]).then(()=>{})
 });
 
 router.start();
