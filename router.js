@@ -129,6 +129,11 @@ function initNavbar(active){
         document.querySelector(".burger-btn").addEventListener("click", function navbarInit(){
             document.getElementById("burger").classList.toggle("active")
             document.querySelector(".nav-menu").classList.toggle("active")
+            if(document.querySelector(".nav-menu").classList.contains("active")){
+                disableScroll()
+            } else {
+                enableScroll()
+            }
         })
         localStorage.setItem("initNavbar", false)
     }

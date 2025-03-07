@@ -84,6 +84,7 @@
     -webkit-transition: all .55s ease-out;
     -o-transition: all .55s ease-out;
     transition: all .55s ease-out;
+    overflow: hidden;
 }
 .nav-menu.active{
     top: 0;
@@ -137,4 +138,9 @@
 }
 .nav-menu ul a:hover{
     letter-spacing: 12px;
+}
+@media screen and (max-width: 500px) {
+    .nav-menu ul a{
+        font-family: 3rem;
+    }
 }
