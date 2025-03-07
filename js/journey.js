@@ -2,46 +2,49 @@ setTimeout(()=>{
     document.getElementById('loader').classList.add('hidden');
     init()    
 },500)
-async function init() {
+function init() {
     setTimeout(()=>{
         fadeIn();
     },550)
-    /*
-        let path = document.querySelector("path"),
-        pathLength = path.getTotalLength()
-
-        path.style.strokeDasharray = pathLength+" "+pathLength
-        path.style.strokeDashoffset = pathLength
-
-        window.addEventListener("scroll", ()=>{
-        let scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-            let drawLength = pathLength * scrollPercentage;
-            path.style.strokeDashoffset = pathLength - drawLength;
-        }))*/
-
-    let path = document.querySelector("#paperBoat path"),
+    let path = document.querySelector("#paperBoat #waves"),
         pathLength = path.getTotalLength();    
     path.style.strokeDasharray = `${pathLength} ${pathLength}`;
     path.style.strokeDashoffset = pathLength;
-
-    setTimeout(() => {
+    setTimeout(() => { 
         function animate() {
-            pathLength -= 25+(pathLength / path.getTotalLength());
+            pathLength -= 40+(pathLength / path.getTotalLength());
             if (pathLength < 0) pathLength = 0;
             path.style.strokeDashoffset = pathLength;
-
+    
             if (pathLength > 0) {
                 requestAnimationFrame(animate);
             } else {
                 document.getElementById("diveIn").classList.add("active");
                 enableScroll();
             }
-        }
-        
+        }           
         requestAnimationFrame(animate);
     }, 100);
-
+    let paths = document.querySelectorAll("path.boat")
+    paths.forEach((path)=>{
+        let pathLength = path.getTotalLength();    
+        path.style.strokeDasharray = `${pathLength} ${pathLength}`;
+        path.style.strokeDashoffset = pathLength;
+        setTimeout(() => {
+            function animateBoat() {
+                pathLength -= 7+(pathLength / path.getTotalLength());
+                if (pathLength < 0) pathLength = 0;
+                path.style.strokeDashoffset = pathLength;
+        
+                if (pathLength > 0) {
+                    requestAnimationFrame(animateBoat);
+                }
+            }        
+            requestAnimationFrame(animateBoat);
+        }, 100);    
+    })
+    if(parseInt(localStorage.getItem("interval")) > 0){
+        clearInterval(localStorage.getItem("interval"))
+        localStorage.setItem("interval", 0)
+    }
 }
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}  

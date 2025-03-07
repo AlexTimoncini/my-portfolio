@@ -5,6 +5,8 @@ if (hasMouse) {
 } else {
     console.log("Parallax disabled: No mouse detected");
 }
+//navbar
+localStorage.setItem("initNavbar", true)
 function parallax(event) {
     this.querySelectorAll(".parallax").forEach((shift) => {
         const position = shift.dataset.parallax

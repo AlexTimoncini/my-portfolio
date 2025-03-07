@@ -19,4 +19,8 @@ function init() {
             }
         }
     }
+    if(parseInt(localStorage.getItem("interval")) > 0){
+        clearInterval(localStorage.getItem("interval"))
+        localStorage.setItem("interval", 0)
+    }
 }

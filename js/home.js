@@ -5,7 +5,11 @@ function init() {
             "Alex<br>Timoncini",
             "I'm a Web<br>Developer"
         ]
-    setInterval(()=>{
+    if(parseInt(localStorage.getItem("interval")) > 0){
+        clearInterval(localStorage.getItem("interval"))
+        localStorage.setItem("interval", 0)
+    }
+    let interval = setInterval(function(){
         if(activeText){
             activeText = 0
         } else {
@@ -18,8 +22,9 @@ function init() {
         setTimeout(()=>{
             document.getElementById("multi_title").classList.remove("fade-in") 
         }, 500)
-    },6000)
+    },5000)
     setTimeout(()=>{
         fadeIn();
     },550)
+    localStorage.setItem("interval", interval)
 }

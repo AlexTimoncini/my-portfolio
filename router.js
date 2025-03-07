@@ -1,7 +1,7 @@
 //ROUTER
 import { Router } from './js/classes/router.class.js'
 //let router = new Router('https://alex-dev.it');
-let router = new Router('http://127.0.0.1:5500/');
+let router = new Router('http://127.0.0.1:5500');
 //rotte
 router.get('/', function(){
     buildPage('home.html',
@@ -10,8 +10,8 @@ router.get('/', function(){
         ],
         [
             {url: 'home.js'}
-        ]).then(()=>stopLoading())
-});
+        ]).then(()=>{stopLoading();initNavbar('home')})
+})
 router.get('/skills', function(){
     buildPage('skills.html',
         [
@@ -19,8 +19,8 @@ router.get('/skills', function(){
         ],
         [
             {url: 'skills.js'}
-        ]).then(()=>stopLoading())
-});
+        ]).then(()=>{stopLoading();initNavbar('skills')})
+})
 router.get('/journey', function(){
     buildPage('journey.html',
         [
@@ -28,11 +28,10 @@ router.get('/journey', function(){
         ],
         [
             {url: 'journey.js', type:"module"}
-        ]).then(()=>{})
-});
+        ]).then(()=>{initNavbar('journey')})
+})
 
 router.start();
-
 async function buildPage(mainHTML, css, scriptList){
     //RUN
     startLoading()
@@ -43,7 +42,6 @@ async function buildPage(mainHTML, css, scriptList){
     if (!document.getElementById("footer"))await footer()
     await main()
     await scripts()
-
     //Functions
     function removeOldStyles() {
         const existingStyles = document.querySelectorAll('link[rel="stylesheet"]:not([data-default=true])');
@@ -121,4 +119,21 @@ function stopLoading(){
         document.getElementById('loader').classList.add('hidden');
         enableScroll()
     }, 500);
+}
+function initNavbar(active){
+    if(document.getElementById("burger").classList.contains("active")){
+        document.getElementById("burger").classList.remove("active")
+        document.querySelector(".nav-menu").classList.remove("active")
+    }
+    if(localStorage.getItem("initNavbar") === "true"){
+        document.querySelector(".burger-btn").addEventListener("click", function navbarInit(){
+            document.getElementById("burger").classList.toggle("active")
+            document.querySelector(".nav-menu").classList.toggle("active")
+        })
+        localStorage.setItem("initNavbar", false)
+    }
+    if(document.querySelectorAll(".nav-menu a.active").length){
+        document.querySelector(".nav-menu a.active").classList.remove("active")
+    }
+    document.querySelector(".nav-menu a#"+active+"-link").classList.add("active")
 }
