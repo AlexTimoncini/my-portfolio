@@ -13,7 +13,7 @@
     max-width: 500px;
     width: 80vw;
     transform: rotateY(180deg);
-    margin: 10rem auto;
+    margin: 10rem auto 5rem;
     display: block;
 }
 #diveIn{
