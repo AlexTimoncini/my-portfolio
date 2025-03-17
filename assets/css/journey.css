@@ -25,6 +25,38 @@
 #diveIn.active{
     opacity: 1;
 }
+.section-name{
+    right: 0;
+}
+.experience{
+    font-size: 2rem;
+    color: var(--main-color);
+    font-family: var(--sec-font);
+}
+.exp-wrap{
+    width: calc(50% - 4px);
+    border-bottom: 5px solid var(--main-color);
+    margin-bottom: 10rem;
+    padding-bottom: 10px;
+}
+.exp-wrap:nth-of-type(2n+1){
+    text-align: right;
+    margin-left: auto;
+}
+.exp-wrap:last-of-type{
+    text-align: center;
+}
+#path{
+    position: relative;
+    padding: 30px 0;
+    margin: 100px 0;
+}
+#path .svg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
 @media screen and (max-width: 750px){
     .section-title{
         font-size: 100px;

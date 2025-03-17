@@ -23,10 +23,43 @@
                     </svg>
                 </div>
             </div>
-            <button class="button" id="diveIn">DIVE IN</button>
+            <button class="button" id="diveIn" onclick="window.scrollBy({
+                  top: window.innerHeight,
+                  left: 0,
+                  behavior: 'smooth',
+            });">DIVE IN</button>
         </div>
     </section>
-    <section>
-        
+    <section id="path">
+        <div class="svg">
+            <svg id="path_line" viewBox="0 0 6 440" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+                <path d="M3 0C3 345.6 3 437.333 3 440" stroke="#79c3bd" stroke-width="3"/>
+            </svg>
+        </div>
+        <div class="exp-wrap scroll-fade-in delay-2">
+            <p class="month-year">June 2021</p>
+            <h3 class="experience">High School Diploma</h3>
+            <div class="icon"></div>
+        </div>
+        <div class="exp-wrap scroll-fade-in delay-2">
+            <p class="month-year">July 2021</p>
+            <h3 class="experience">EU Faenza-Schwäbisch Gmünd twinning</h3>
+            <div class="icon"></div>
+        </div>
+        <div class="exp-wrap scroll-fade-in delay-2">
+            <p class="month-year">December 2022 -January 2023</p>
+            <h3 class="experience">Real Estate Assistant</h3>
+            <div class="icon"></div>
+        </div>
+        <div class="exp-wrap scroll-fade-in delay-2">
+            <p class="month-year">March 2023-September 2023</p>
+            <h3 class="experience">Boolean Careers</h3>
+            <div class="icon"></div>
+        </div>
+        <div class="exp-wrap scroll-fade-in delay-2">
+            <p class="month-year">November 2023 - Now</p>
+            <h3 class="experience">Full Stack Web Developer - OverCover Scriba</h3>
+            <div class="icon"></div>
+        </div>
     </section>
 </div>
