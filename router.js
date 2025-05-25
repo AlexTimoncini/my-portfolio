@@ -27,7 +27,7 @@ router.get('/journey', function(){
             'journey.css'
         ],
         [
-            {url: 'journey.js', type:"module"}
+            {url: 'journey.js'}
         ]).then(()=>{initNavbar('journey')})
 })
 
