@@ -47,4 +47,24 @@ function init() {
         clearInterval(localStorage.getItem("interval"))
         localStorage.setItem("interval", 0)
     }
+    let dimensions = document.getElementById("path").getBoundingClientRect()
+    document.getElementById("path_line").setAttribute("height", dimensions.height)
+    document.getElementById("path_line").setAttribute("width", dimensions.width)
+    const linea = document.querySelector("#path_line path");
+    const lunghezza = dimensions.height // Ottiene la lunghezza della linea
+    const container = document.querySelector('#path');
+    linea.style.strokeDasharray = `${lunghezza} ${lunghezza}`;
+    function aggiornaLinea() {
+        const rect = container.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const inizioAnimazione = viewportHeight * 0.5; // Inizia quando è al 30% dello schermo
+        const fineAnimazione = viewportHeight * 0.5; // Finisce quando è al 70% dello schermo
+        const progress = (viewportHeight - rect.top - inizioAnimazione) / (rect.height + fineAnimazione);
+        const progressClamped = Math.min(1, Math.max(0, progress / 2.2));
+        linea.style.strokeDashoffset = lunghezza * (1 - progressClamped);
+    }
+
+    window.addEventListener('scroll', aggiornaLinea);
+    window.addEventListener('resize', aggiornaLinea);
+    aggiornaLinea();
 }
