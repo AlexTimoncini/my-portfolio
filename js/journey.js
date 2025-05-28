@@ -65,6 +65,8 @@ function init() {
     }
 
     window.addEventListener('scroll', aggiornaLinea);
-    window.addEventListener('resize', aggiornaLinea);
+    window.addEventListener('resize', ()=>{
+        top.location.reload()
+    });
     aggiornaLinea();
 }

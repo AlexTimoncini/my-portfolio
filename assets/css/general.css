@@ -165,7 +165,12 @@ h2{
 .social:hover{
     transform: scale(1.1);
 }
-
+.pb-4{
+    padding-bottom: 2rem;
+}
+.pt-4{
+    padding-top: 2rem;
+}
 
 
 

@@ -2,10 +2,10 @@
     padding-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
+    column-gap: 20px;
 }
 .footer-col{
-    width: 50%;
-    padding: 0 10px;
+    width: calc(50% - 10px);
 }
 @media screen and (max-width: 999px){
     .footer-col{

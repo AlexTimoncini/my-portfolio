@@ -29,27 +29,35 @@
     right: 0;
 }
 .experience{
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 2vh, 2rem);
     color: var(--main-color);
     font-family: var(--sec-font);
 }
 .exp-wrap{
     width: calc(50% - 4px);
-    border-bottom: 5px solid var(--main-color);
+    border-bottom: 3px solid var(--main-color);
     margin-bottom: 10rem;
     padding-bottom: 10px;
+    translate: 3px;
 }
 .exp-wrap:nth-of-type(2n+1){
     text-align: right;
     margin-left: auto;
+    translate: -3px;
 }
 .exp-wrap:last-of-type{
     text-align: center;
+    margin: 0 auto;
+    translate: 0;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg);
+    border: 3px solid var(--main-color);
 }
 #path{
     position: relative;
-    padding: 30px 0;
-    margin: 100px 0;
+    padding-top: 30px;
+    margin-top: 100px;
 }
 #path .svg{
     position: absolute;
