@@ -166,12 +166,20 @@ h2{
     transform: scale(1.1);
 }
 .pb-4{
-    padding-bottom: 2rem;
+    padding-bottom: 2rem!important;
 }
 .pt-4{
-    padding-top: 2rem;
+    padding-top: 2rem!important;
 }
-
+.pb-2{
+    padding-bottom: 1rem!important;
+}
+.pt-3{
+    padding-top: 1.5rem!important;
+}
+.p-0{
+    padding: 0!important;
+}
 
 
 

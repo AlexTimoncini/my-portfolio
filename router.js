@@ -30,6 +30,15 @@ router.get('/journey', function(){
             {url: 'journey.js'}
         ]).then(()=>{initNavbar('journey')})
 })
+router.get('/gallery', function(){
+    buildPage('gallery.html',
+        [
+            'gallery.css'
+        ],
+        [
+            {url: 'gallery.js'}
+        ]).then(()=>{stopLoading();initNavbar('gallery')})
+})
 
 router.start();
 async function buildPage(mainHTML, css, scriptList){
