@@ -27,24 +27,24 @@ header .hero{
 }
 @keyframes gradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
 @-webkit-keyframes gradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
 .hero img{
@@ -167,7 +167,7 @@ header .hero{
     background-color: var(--bg);
     color: var(--black);
     font-size: 1.5rem;
-    font-family: var(--sec-font);
+    font-family: var(--sec-font), sans-serif;
     font-weight: lighter;
     padding: 3rem;
     box-shadow: rgba(0, 0, 0, 0.6) 0 7px 29px 0;
