@@ -174,7 +174,7 @@ header .hero{
     transition: all .33s ease-in;
 }
 .hero-projects:hover h3{
-    transform: scale(1.2) translate(-50%, -50%);
+    transform: scale(1.2) translate(-60%, -60%);
     transform-origin: center;
 }
 #works .button{
