@@ -173,12 +173,9 @@ header .hero{
     box-shadow: rgba(0, 0, 0, 0.6) 0 7px 29px 0;
     transition: all .33s ease-in;
 }
-.hero-projects:hover img {
-    opacity: 0.7;
-}
-.hero-projects:hover h3 {
-    padding: 3.5rem;
-    font-size: 1.7rem;
+.hero-projects:hover h3{
+    transform: scale(1.2);
+    transform-origin: center;
 }
 #works .button{
     margin: 1rem auto 0;
