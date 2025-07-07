@@ -2,10 +2,8 @@ setTimeout(()=>{
     document.getElementById('loader').classList.add('hidden');
     init()    
 },500)
+let first = true
 function init() {
-    setTimeout(()=>{
-        fadeIn();
-    },550)
     let path = document.querySelector("#paperBoat #waves"),
         pathLength = path.getTotalLength();    
     path.style.strokeDasharray = `${pathLength} ${pathLength}`;
@@ -54,17 +52,45 @@ function init() {
     const lunghezza = dimensions.height // Ottiene la lunghezza della linea
     const container = document.querySelector('#path');
     linea.style.strokeDasharray = `${lunghezza} ${lunghezza}`;
+    let apperead = false,   
+        start = 0
     function aggiornaLinea() {
-        const rect = container.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        const inizioAnimazione = viewportHeight * 0.5; // Inizia quando è al 30% dello schermo
-        const fineAnimazione = viewportHeight * 0.5; // Finisce quando è al 70% dello schermo
-        const progress = (viewportHeight - rect.top - inizioAnimazione) / (rect.height + fineAnimazione);
-        const progressClamped = Math.min(1, Math.max(0, progress / 2.2));
-        linea.style.strokeDashoffset = lunghezza * (1 - progressClamped);
+        const viewportHeight = window.innerHeight
+        const rect = container.getBoundingClientRect()
+        const inizioAnimazione = viewportHeight * 0.5
+        const fineAnimazione = viewportHeight * 0.5
+        const progress = (viewportHeight - rect.top - inizioAnimazione) / (rect.height + fineAnimazione)
+        const progressClamped = Math.min(1, Math.max(0, progress / 2.2))
+        linea.style.strokeDashoffset = lunghezza * (1 - progressClamped)
+        const cursor_boat = document.getElementById('cursor_boat')
+        const directions = document.getElementById("path_line").getBoundingClientRect()
+        if(progressClamped > 0){
+            cursor_boat.style.opacity = "1"
+            if(!apperead){
+                apperead = true
+                start = directions.top
+            }
+            if(apperead){
+                cursor_boat.style.top = start * (1 - progressClamped)+"px"
+            }
+            if(progress >= 0.82){
+                cursor_boat.style.display = "none"
+            } else {
+                cursor_boat.style.display = "block"
+            }
+        } else {
+            cursor_boat.style.opacity = "0"
+        }
     }
 
-    window.addEventListener('scroll', aggiornaLinea);
+    window.addEventListener('scroll', ()=>{
+        aggiornaLinea()
+        if(first){
+            setTimeout(()=>{
+                fadeIn();
+            },550)
+        }
+    });
     window.addEventListener('resize', ()=>{
         top.location.reload()
     });
